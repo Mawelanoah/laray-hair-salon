@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>La Ray Hair Salon | Soshanguve</title>
+  <meta name="description" content="La Ray Hair Salon – Professional hair care for women and children on Ruth First Road, Soshanguve. Book easily on WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #25d366;
+      --green-dark: #1ebe57;
+      --gold: #c9a227;
+      --text: #1a1a1a;
+      --muted: #666;
+      --bg: #faf9f7;
+      --card: #ffffff;
+      --radius: 16px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      font-size: 15px;
+      padding-bottom: 90px;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 480px; margin: 0 auto; padding: 0 16px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      padding: 12px 16px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      font-weight: 800; font-size: 1.15rem;
+      color: #1a1a1a;
+    }
+    .logo span { color: var(--gold); }
+    .wa-header {
+      background: var(--green); color: #fff;
+      font-weight: 600; font-size: 0.82rem;
+      padding: 8px 14px; border-radius: 50px;
+      display: flex; align-items: center; gap: 6px;
+    }
+
+    /* Status Bar */
+    .status-bar {
+      text-align: center; padding: 9px 12px;
+      font-size: 0.85rem; font-weight: 600;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .status-bar.open { background: #e8f8ef; color: #1a7a3c; }
+    .status-bar.closed { background: #fdeaea; color: #b91c1c; }
+    .status-bar .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: currentColor;
+      animation: pulse 1.6s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(180deg, #fff 0%, #faf9f7 100%);
+      padding: 24px 16px 32px;
+      text-align: center;
+    }
+    .hero-img {
+      width: 100%; max-width: 340px; margin: 0 auto 20px;
+      border-radius: 20px; overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+    .hero-img img { width: 100%; height: auto; }
+    .hero h1 {
+      font-size: 1.85rem; font-weight: 800;
+      margin-bottom: 6px; line-height: 1.2;
+    }
+    .hero p {
+      color: var(--muted); margin-bottom: 18px; font-size: 0.95rem;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      height: 48px; border-radius: 50px; font-weight: 600; font-size: 0.95rem;
+      border: none; cursor: pointer; width: 100%; max-width: 280px;
+    }
+    .btn-green { background: var(--green); color: #fff; }
+    .btn-outline {
+      background: transparent; border: 1.5px solid #ddd; color: var(--text);
+      margin-top: 10px;
+    }
+
+    /* Services */
+    .section { padding: 28px 16px; }
+    .section-title {
+      font-size: 1.35rem; font-weight: 800; margin-bottom: 6px;
+      text-align: center;
+    }
+    .section-sub {
+      text-align: center; color: var(--muted); margin-bottom: 22px; font-size: 0.9rem;
+    }
+    .service {
+      background: var(--card); border-radius: 14px;
+      padding: 14px; margin-bottom: 12px;
+      display: flex; gap: 14px; align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      border: 1px solid #f0f0f0;
+    }
+    .service img {
+      width: 74px; height: 74px; border-radius: 12px; object-fit: cover;
+      flex-shrink: 0; background: #f0f0f0;
+    }
+    .service-info { flex: 1; min-width: 0; }
+    .service-info h3 { font-size: 0.98rem; font-weight: 700; margin-bottom: 2px; }
+    .service-info p { font-size: 0.78rem; color: var(--muted); margin-bottom: 6px; }
+    .price { color: var(--green); font-weight: 700; font-size: 1rem; }
+    .book-btn {
+      background: var(--green); color: #fff;
+      border: none; height: 34px; padding: 0 14px;
+      border-radius: 20px; font-weight: 600; font-size: 0.8rem;
+      cursor: pointer; white-space: nowrap;
+      display: inline-flex; align-items: center;
+    }
+
+    /* About & Contact */
+    .card {
+      background: var(--card); border-radius: 16px;
+      padding: 20px; margin-bottom: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      border: 1px solid #f0f0f0;
+    }
+    .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
+    .info-row {
+      display: flex; gap: 12px; align-items: flex-start;
+      margin-bottom: 14px; font-size: 0.92rem;
+    }
+    .info-row:last-child { margin-bottom: 0; }
+    .info-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: #f0faf4; color: var(--green);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 1.1rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 28px 16px;
+      color: var(--muted); font-size: 0.85rem;
+    }
+    footer strong { color: var(--text); }
+
+    /* Floating WhatsApp */
+    .float-wa {
+      position: fixed; bottom: 20px; right: 16px; z-index: 90;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--green); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem;
+      box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo">La <span>Ray</span> Hair Salon</div>
+  <a href="https://wa.me/27769517085?text=Hi%20La%20Ray%20Hair%20Salon%2C%20I%20would%20like%20to%20book%20an%20appointment" class="wa-header" target="_blank">
+    💬 WhatsApp
+  </a>
+</header>
+
+<!-- Status -->
+<div class="status-bar open" id="statusBar">
+  <span class="dot"></span>
+  <span id="statusText">We are OPEN • Mon–Sat 08:00–18:00</span>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-img">
+    <!-- Replace this image later with a real salon photo if available -->
+    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=700&q=80" alt="La Ray Hair Salon">
+  </div>
+  <h1>La Ray Hair Salon</h1>
+  <p>Professional hair care for women & children<br>Ruth First Road, Soshanguve</p>
+  <a href="https://wa.me/27769517085?text=Hi%20La%20Ray%20Hair%20Salon%2C%20I%20would%20like%20to%20book%20an%20appointment" class="btn btn-green" target="_blank">
+    💬 Book on WhatsApp
+  </a>
+  <a href="#services" class="btn btn-outline">View Services</a>
+</section>
+
+<!-- Services -->
+<section class="section" id="services">
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-sub">Quality styles at affordable prices</p>
+
+  <div class="service">
+    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=200&q=80" alt="Braids">
+    <div class="service-info">
+      <h3>Braids</h3>
+      <p>Neat & stylish protective styles</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <span class="price">from R250</span>
+        <a href="https://wa.me/27769517085?text=Hi%2C%20I%20want%20to%20book%20Braids" class="book-btn" target="_blank">Book</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="service">
+    <img src="https://images.unsplash.com/photo-1595475884562-073c2bfa70d0?w=200&q=80" alt="Box Braids">
+    <div class="service-info">
+      <h3>Box Braids</h3>
+      <p>Full, stylish box braids</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <span class="price">from R350</span>
+        <a href="https://wa.me/27769517085?text=Hi%2C%20I%20want%20to%20book%20Box%20Braids" class="book-btn" target="_blank">Book</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="service">
+    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=200&q=80" alt="Knotless Braids">
+    <div class="service-info">
+      <h3>Knotless Braids</h3>
+      <p>Light & natural-looking</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <span class="price">from R450</span>
+        <a href="https://wa.me/27769517085?text=Hi%2C%20I%20want%20to%20book%20Knotless%20Braids" class="book-btn" target="_blank">Book</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="service">
+    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=200&q=80" alt="Weave">
+    <div class="service-info">
+      <h3>Weave Installation</h3>
+      <p>Seamless professional weaves</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <span class="price">from R400</span>
+        <a href="https://wa.me/27769517085?text=Hi%2C%20I%20want%20to%20book%20Weave%20Installation" class="book-btn" target="_blank">Book</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="service">
+    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=200&q=80" alt="Relaxer">
+    <div class="service-info">
+      <h3>Relaxer</h3>
+      <p>Smooth & manageable hair</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <span class="price">from R180</span>
+        <a href="https://wa.me/27769517085?text=Hi%2C%20I%20want%20to%20book%20Relaxer" class="book-btn" target="_blank">Book</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="service">
+    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=200&q=80" alt="Kids Styles">
+    <div class="service-info">
+      <h3>Kids Styles</h3>
+      <p>Gentle & cute styles for children</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <span class="price">from R150</span>
+        <a href="https://wa.me/27769517085?text=Hi%2C%20I%20want%20to%20book%20Kids%20Styles" class="book-btn" target="_blank">Book</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="service">
+    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=200&q=80" alt="Wash & Blow">
+    <div class="service-info">
+      <h3>Wash & Blow</h3>
+      <p>Clean, conditioned & styled</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <span class="price">from R120</span>
+        <a href="https://wa.me/27769517085?text=Hi%2C%20I%20want%20to%20book%20Wash%20%26%20Blow" class="book-btn" target="_blank">Book</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About & Contact -->
+<section class="section">
+  <h2 class="section-title">Visit Us</h2>
+  <p class="section-sub">We can’t wait to style you</p>
+
+  <div class="card">
+    <h3>About La Ray</h3>
+    <p style="color:var(--muted);font-size:0.92rem;line-height:1.6;">
+      La Ray Hair Salon offers professional hair care for women and children in Soshanguve. We specialise in braids, weaves, relaxers and kids styles with quality service at affordable prices.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="info-row">
+      <div class="info-icon">📍</div>
+      <div>
+        <strong>Address</strong><br>
+        57 Block WW, Ruth First Road<br>
+        Soshanguve, 0152
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">🕐</div>
+      <div>
+        <strong>Opening Hours</strong><br>
+        Monday – Saturday: 08:00 – 18:00<br>
+        Sunday: Closed
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-icon">📞</div>
+      <div>
+        <strong>Phone / WhatsApp</strong><br>
+        <a href="tel:0769517085" style="color:var(--green);font-weight:600;">076 951 7085</a>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://www.google.com/maps/search/?api=1&query=57+Block+WW+Ruth+First+Road+Soshanguve" class="btn btn-outline" target="_blank" style="max-width:100%;margin-top:8px;">
+    📍 Get Directions
+  </a>
+</section>
+
+<footer>
+  <strong>La Ray Hair Salon</strong><br>
+  Ruth First Road, Soshanguve<br>
+  © 2026 All rights reserved
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/27769517085?text=Hi%20La%20Ray%20Hair%20Salon%2C%20I%20would%20like%20to%20book%20an%20appointment" class="float-wa" target="_blank">
+  💬
+</a>
+
+<script>
+  // Open / Closed status
+  function updateStatus() {
+    const now = new Date();
+    const day = now.getDay(); // 0 = Sunday
+    const time = now.getHours() * 60 + now.getMinutes();
+    const open = 8 * 60;   // 08:00
+    const close = 18 * 60; // 18:00
+
+    const bar = document.getElementById('statusBar');
+    const text = document.getElementById('statusText');
+
+    if (day === 0 || time < open || time >= close) {
+      bar.className = 'status-bar closed';
+      text.textContent = 'We are CLOSED • Opens Mon 08:00';
+    } else {
+      bar.className = 'status-bar open';
+      text.textContent = 'We are OPEN • Mon–Sat 08:00–18:00';
+    }
+  }
+  updateStatus();
+  setInterval(updateStatus, 60000);
+</script>
+</body>
+</html>
