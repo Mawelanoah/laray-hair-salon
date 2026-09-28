@@ -2,413 +2,489 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#0a0a0a">
-  <title>La Ray Hair Salon | Soshanguve</title>
-  <meta name="description" content="La Ray Hair Salon – Professional hair care for women and children on Ruth First Road, Soshanguve. Book on WhatsApp.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cloud Nails Studio — Professional nail care and custom designs in Pretoria North. Book your appointment online.">
+  <meta name="theme-color" content="#8B7355">
+  <title>Cloud Nails Studio | Pretoria North</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --green: #25d366;
-      --green-dark: #1da851;
-      --bg: #0a0a0a;
-      --card: #141414;
-      --card-border: #222;
-      --text: #ffffff;
-      --muted: #a0a0a0;
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-      font-size: 15px;
-      padding-bottom: 100px;
-    }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-
-    header {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(10,10,10,0.95);
-      backdrop-filter: blur(12px);
-      padding: 14px 18px;
-      display: flex; align-items: center; justify-content: space-between;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    .logo {
-      display: flex; align-items: center; gap: 8px;
-      font-weight: 800; font-size: 1.05rem;
-    }
-    .logo-icon {
-      width: 34px; height: 34px;
-      background: linear-gradient(135deg, #1a7a3c, #25d366);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem;
-    }
-    .logo-text span {
-      color: #25d366; font-weight: 500; font-size: 0.65rem;
-      display: block; letter-spacing: 1.5px;
-    }
-    .wa-header {
-      background: var(--green); color: #fff;
-      font-weight: 600; font-size: 0.82rem;
-      padding: 9px 16px; border-radius: 50px;
-      display: flex; align-items: center; gap: 6px;
-    }
-
-    .status-bar {
-      text-align: center; padding: 8px 12px;
-      font-size: 0.82rem; font-weight: 600;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-    }
-    .status-bar.open { background: #0d2a1a; color: #25d366; }
-    .status-bar.closed { background: #2a0d0d; color: #ff6b6b; }
-    .status-bar .dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: currentColor;
-      animation: pulse 1.6s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.35; }
-    }
-
-    .hero {
-      padding: 24px 18px 28px;
-    }
-    .hero-content h1 {
-      font-size: 2.2rem; font-weight: 800;
-      line-height: 1.15; margin-bottom: 8px;
-    }
-    .hero-content .underline {
-      width: 48px; height: 3px; background: var(--green);
-      margin-bottom: 12px; border-radius: 2px;
-    }
-    .hero-content p {
-      color: var(--muted); font-size: 0.95rem; margin-bottom: 18px;
-    }
-    .hero-img {
-      border-radius: 18px; overflow: hidden;
-      margin-top: 18px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    }
-    .hero-img img {
-      width: 100%; height: 260px; object-fit: cover;
-    }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      height: 48px; border-radius: 50px; font-weight: 600; font-size: 0.95rem;
-      border: none; cursor: pointer; width: 100%;
-    }
-    .btn-green { background: var(--green); color: #fff; }
-
-    .section { padding: 10px 18px 30px; }
-    .section-label {
-      color: var(--green); font-size: 0.75rem; font-weight: 700;
-      letter-spacing: 1.2px; text-transform: uppercase;
-      display: flex; align-items: center; gap: 6px; margin-bottom: 6px;
-    }
-    .section-title {
-      font-size: 1.4rem; font-weight: 800; margin-bottom: 6px; line-height: 1.25;
-    }
-    .section-sub {
-      color: var(--muted); font-size: 0.9rem; margin-bottom: 20px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .service-card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-    .service-card img {
-      width: 100%; height: 105px; object-fit: cover;
-    }
-    .service-body {
-      padding: 12px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .service-body h3 {
-      font-size: 0.92rem; font-weight: 700; margin-bottom: 2px;
-    }
-    .service-body .price {
-      color: var(--green); font-weight: 700; font-size: 0.88rem; margin-bottom: 4px;
-    }
-    .service-body p {
-      color: var(--muted); font-size: 0.7rem; line-height: 1.4; margin-bottom: 10px;
-      flex: 1;
-    }
-    .book-btn {
-      background: transparent;
-      border: 1px solid var(--green);
-      color: var(--green);
-      height: 32px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.78rem;
-      display: flex; align-items: center; justify-content: center;
-      width: 100%;
-    }
-
-    .visit-card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 18px;
-    }
-    .info-row {
-      display: flex; gap: 12px; align-items: flex-start;
-      margin-bottom: 16px; font-size: 0.9rem;
-    }
-    .info-row:last-child { margin-bottom: 0; }
-    .info-icon {
-      width: 34px; height: 34px; border-radius: 50%;
-      background: #0d2a1a; color: var(--green);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; font-size: 1rem;
-    }
-    .map-btn {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      margin-top: 16px;
-      background: transparent;
-      border: 1px solid #333;
-      color: #fff;
-      height: 44px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      width: 100%;
-    }
-
-    .bottom-bar {
-      position: fixed; bottom: 0; left: 0; right: 0;
-      background: #111;
-      border-top: 1px solid #222;
-      padding: 12px 18px;
-      display: flex; align-items: center; justify-content: space-between;
-      z-index: 90;
-    }
-    .bottom-bar .loc {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 0.8rem; color: var(--muted);
-    }
-    .bottom-bar .loc strong { color: #fff; display: block; font-size: 0.85rem; }
-    .bottom-bar .map-link {
-      background: transparent;
-      border: 1px solid var(--green);
-      color: var(--green);
-      padding: 8px 14px;
-      border-radius: 50px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      display: flex; align-items: center; gap: 5px;
-    }
-
-    .float-wa {
-      position: fixed; bottom: 80px; right: 16px; z-index: 95;
-      width: 54px; height: 54px; border-radius: 50%;
-      background: var(--green); color: #fff;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem;
-      box-shadow: 0 6px 20px rgba(37,211,102,0.45);
-    }
-
-    footer {
-      text-align: center; padding: 24px 18px 20px;
-      color: #555; font-size: 0.8rem;
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- ========== HEADER / NAV ========== -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#home" class="logo" aria-label="Cloud Nails Studio Home">
+        <span class="logo-mark" aria-hidden="true">CN</span>
+        <span class="logo-text">
+          <span class="logo-line1">CLOUD NAILS</span>
+          <span class="logo-line2">STUDIO</span>
+        </span>
+      </a>
 
-<header>
-  <div class="logo">
-    <div class="logo-icon">💇</div>
-    <div class="logo-text">
-      LA RAY
-      <span>HAIR SALON</span>
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#booking" class="nav-link">Book</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="#booking" class="btn btn-primary header-cta">Book Appointment</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
     </div>
-  </div>
-  <a href="https://wa.me/27769517085?text=Hi%20La%20Ray%20Hair%20Salon%2C%20I%20would%20like%20to%20book%20an%20appointment" class="wa-header" target="_blank">
-    💬 WhatsApp
+  </header>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="hero-eyebrow">Pretoria North · Nail Studio</p>
+          <h1 class="hero-title">
+            Beautiful nails,<br>
+            <em>made for you.</em>
+          </h1>
+          <p class="hero-text">
+            Professional nail care and custom designs in Pretoria North.
+          </p>
+          <div class="hero-actions">
+            <a href="#booking" class="btn btn-primary">Book an Appointment</a>
+            <a href="#services" class="btn btn-secondary">View Services</a>
+          </div>
+          <p class="hero-trust">Easy booking · Personal service · Beautiful results</p>
+        </div>
+        <div class="hero-media">
+          <div class="hero-image-placeholder" role="img" aria-label="Replace with Cloud Nails Studio hero photo">
+            <span class="placeholder-label">Replace with Cloud Nails Studio hero photo</span>
+            <span class="placeholder-hint">assets/hero.jpg</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TRUST BAR ========== -->
+    <section class="trust" aria-label="Trust indicators">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <span class="trust-value">5.0 ★</span>
+          <span class="trust-label">Current online rating</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-value">25+</span>
+          <span class="trust-label">Current listed reviews</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-value">Easy Booking</span>
+          <span class="trust-label">Choose a service &amp; time</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SERVICES ========== -->
+    <section class="services section" id="services">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Our Services</h2>
+          <p class="section-subtitle">Choose your perfect service</p>
+        </header>
+
+        <div class="services-grid">
+          <!-- Service 1: Gel Overlay -->
+          <article class="service-card" data-service="Gel Overlay">
+            <div class="service-image-placeholder" role="img" aria-label="Gel Overlay service image placeholder">
+              <span>NAIL SERVICE</span>
+              <span class="placeholder-file">assets/service-1.jpg</span>
+            </div>
+            <div class="service-body">
+              <h3 class="service-name">Gel Overlay</h3>
+              <p class="service-desc">PLACEHOLDER — CONFIRM WITH BUSINESS. Strengthening gel overlay for natural nails.</p>
+              <div class="service-meta">
+                <span class="service-price">R___</span>
+                <span class="service-duration">___ min</span>
+              </div>
+              <button type="button" class="btn btn-outline book-service-btn" data-service="Gel Overlay">Book this service</button>
+            </div>
+          </article>
+
+          <!-- Service 2: Acrylic Full Set -->
+          <article class="service-card" data-service="Acrylic Full Set">
+            <div class="service-image-placeholder" role="img" aria-label="Acrylic Full Set service image placeholder">
+              <span>NAIL SERVICE</span>
+              <span class="placeholder-file">assets/service-2.jpg</span>
+            </div>
+            <div class="service-body">
+              <h3 class="service-name">Acrylic Full Set</h3>
+              <p class="service-desc">PLACEHOLDER — CONFIRM WITH BUSINESS. Full acrylic set with shape and length of your choice.</p>
+              <div class="service-meta">
+                <span class="service-price">R___</span>
+                <span class="service-duration">___ min</span>
+              </div>
+              <button type="button" class="btn btn-outline book-service-btn" data-service="Acrylic Full Set">Book this service</button>
+            </div>
+          </article>
+
+          <!-- Service 3: Nail Art -->
+          <article class="service-card" data-service="Nail Art">
+            <div class="service-image-placeholder" role="img" aria-label="Nail Art service image placeholder">
+              <span>NAIL SERVICE</span>
+              <span class="placeholder-file">assets/service-3.jpg</span>
+            </div>
+            <div class="service-body">
+              <h3 class="service-name">Nail Art</h3>
+              <p class="service-desc">PLACEHOLDER — CONFIRM WITH BUSINESS. Custom designs, from subtle to statement.</p>
+              <div class="service-meta">
+                <span class="service-price">From R___</span>
+                <span class="service-duration">___ min</span>
+              </div>
+              <button type="button" class="btn btn-outline book-service-btn" data-service="Nail Art">Book this service</button>
+            </div>
+          </article>
+
+          <!-- Service 4: Pedicure -->
+          <article class="service-card" data-service="Pedicure">
+            <div class="service-image-placeholder" role="img" aria-label="Pedicure service image placeholder">
+              <span>NAIL SERVICE</span>
+              <span class="placeholder-file">assets/service-4.jpg</span>
+            </div>
+            <div class="service-body">
+              <h3 class="service-name">Pedicure</h3>
+              <p class="service-desc">PLACEHOLDER — CONFIRM WITH BUSINESS. Relaxing pedicure with polish or gel finish.</p>
+              <div class="service-meta">
+                <span class="service-price">R___</span>
+                <span class="service-duration">___ min</span>
+              </div>
+              <button type="button" class="btn btn-outline book-service-btn" data-service="Pedicure">Book this service</button>
+            </div>
+          </article>
+        </div>
+
+        <p class="services-note">
+          <em>All services, prices and durations are placeholders. Confirm with Cloud Nails Studio.</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== BOOKING CTA ========== -->
+    <section class="cta-banner">
+      <div class="container cta-banner-inner">
+        <h2 class="cta-banner-title">Make time for yourself.</h2>
+        <p class="cta-banner-text">Choose your service and request an appointment in just a few steps.</p>
+        <a href="#booking" class="btn btn-primary">Book Now</a>
+      </div>
+    </section>
+
+    <!-- ========== BOOKING FORM ========== -->
+    <section class="booking section" id="booking">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Book an Appointment</h2>
+          <p class="section-subtitle">Select your service, date and time — we’ll confirm via WhatsApp</p>
+        </header>
+
+        <form class="booking-form" id="bookingForm" novalidate>
+          <div class="form-grid">
+            <!-- Service -->
+            <div class="form-group form-group-full">
+              <label for="service">Service <span class="required">*</span></label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="Gel Overlay">Gel Overlay</option>
+                <option value="Acrylic Full Set">Acrylic Full Set</option>
+                <option value="Nail Art">Nail Art</option>
+                <option value="Pedicure">Pedicure</option>
+              </select>
+              <span class="form-hint">PLACEHOLDER services — update when confirmed</span>
+            </div>
+
+            <!-- Date -->
+            <div class="form-group">
+              <label for="date">Preferred date <span class="required">*</span></label>
+              <input type="date" id="date" name="date" required>
+            </div>
+
+            <!-- Time slots -->
+            <div class="form-group form-group-full">
+              <label id="time-label">Preferred time <span class="required">*</span></label>
+              <div class="time-slots" id="timeSlots" role="group" aria-labelledby="time-label">
+                <button type="button" class="time-slot" data-time="09:00">09:00</button>
+                <button type="button" class="time-slot" data-time="10:00">10:00</button>
+                <button type="button" class="time-slot" data-time="11:00">11:00</button>
+                <button type="button" class="time-slot" data-time="12:00">12:00</button>
+                <button type="button" class="time-slot" data-time="13:00">13:00</button>
+                <button type="button" class="time-slot" data-time="14:00">14:00</button>
+                <button type="button" class="time-slot" data-time="15:00">15:00</button>
+                <button type="button" class="time-slot" data-time="16:00">16:00</button>
+                <button type="button" class="time-slot" data-time="17:00">17:00</button>
+              </div>
+              <input type="hidden" id="time" name="time" required>
+              <span class="form-hint">Demo times — confirm real availability with the studio</span>
+            </div>
+
+            <!-- Name -->
+            <div class="form-group">
+              <label for="name">Your name <span class="required">*</span></label>
+              <input type="text" id="name" name="name" placeholder="Full name" required autocomplete="name">
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="form-group">
+              <label for="phone">WhatsApp number <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="e.g. 075 040 4794" required autocomplete="tel">
+            </div>
+
+            <!-- Notes -->
+            <div class="form-group form-group-full">
+              <label for="notes">Special request / notes</label>
+              <textarea id="notes" name="notes" rows="3" placeholder="e.g. French tips, short nails, reference design…"></textarea>
+            </div>
+
+            <!-- Confirmation -->
+            <div class="form-group form-group-full form-checkbox">
+              <label class="checkbox-label">
+                <input type="checkbox" id="confirm" name="confirm" required>
+                <span>I understand this is a booking request. Cloud Nails Studio will confirm availability via WhatsApp. <span class="required">*</span></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+              Continue to WhatsApp
+            </button>
+          </div>
+
+          <div class="form-message" id="formMessage" role="status" aria-live="polite" hidden></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========== GALLERY ========== -->
+    <section class="gallery section" id="gallery">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Gallery</h2>
+          <p class="section-subtitle">A glimpse of the work — real photos to be added</p>
+        </header>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" role="img" aria-label="NAIL PHOTO 01">
+            <span class="gallery-label">NAIL PHOTO 01</span>
+            <span class="placeholder-file">assets/gallery-1.jpg</span>
+          </div>
+          <div class="gallery-item" role="img" aria-label="NAIL PHOTO 02">
+            <span class="gallery-label">NAIL PHOTO 02</span>
+            <span class="placeholder-file">assets/gallery-2.jpg</span>
+          </div>
+          <div class="gallery-item" role="img" aria-label="NAIL PHOTO 03">
+            <span class="gallery-label">NAIL PHOTO 03</span>
+            <span class="placeholder-file">assets/gallery-3.jpg</span>
+          </div>
+          <div class="gallery-item" role="img" aria-label="NAIL PHOTO 04">
+            <span class="gallery-label">NAIL PHOTO 04</span>
+            <span class="placeholder-file">assets/gallery-4.jpg</span>
+          </div>
+          <div class="gallery-item" role="img" aria-label="NAIL PHOTO 05">
+            <span class="gallery-label">NAIL PHOTO 05</span>
+            <span class="placeholder-file">assets/gallery-5.jpg</span>
+          </div>
+          <div class="gallery-item" role="img" aria-label="NAIL PHOTO 06">
+            <span class="gallery-label">NAIL PHOTO 06</span>
+            <span class="placeholder-file">assets/gallery-6.jpg</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="about section" id="about">
+      <div class="container about-grid">
+        <div class="about-media">
+          <div class="about-image-placeholder" role="img" aria-label="About Cloud Nails Studio image placeholder">
+            <span class="placeholder-label">About photo</span>
+            <span class="placeholder-hint">assets/about.jpg</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <h2 class="section-title">About Cloud Nails Studio</h2>
+          <p class="about-lead">A beauty experience built around you.</p>
+          <p class="about-text">
+            PLACEHOLDER — CONFIRM WITH BUSINESS. Share the real story of Cloud Nails Studio here: who you are, what you love about nail artistry, and what clients can expect when they visit.
+          </p>
+
+          <div class="about-features">
+            <div class="about-feature">
+              <span class="feature-num">01</span>
+              <div>
+                <h3 class="feature-title">Personal Attention</h3>
+                <p class="feature-text">Every appointment is tailored to you — your style, your nails, your time.</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <span class="feature-num">02</span>
+              <div>
+                <h3 class="feature-title">Beautiful Results</h3>
+                <p class="feature-text">Clean work, thoughtful design, and finishes that last.</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <span class="feature-num">03</span>
+              <div>
+                <h3 class="feature-title">Simple Booking</h3>
+                <p class="feature-text">Request your slot online and confirm easily on WhatsApp.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== REVIEWS ========== -->
+    <section class="reviews section" id="reviews">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">What clients are saying</h2>
+          <p class="section-subtitle">5.0 from 25 current online reviews</p>
+        </header>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 stars">★★★★★</div>
+            <blockquote class="review-text">
+              “Add a real customer review here.”
+            </blockquote>
+            <cite class="review-author">— Customer Name</cite>
+            <p class="review-note">PLACEHOLDER — CONFIRM WITH BUSINESS</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 stars">★★★★★</div>
+            <blockquote class="review-text">
+              “Add a real customer review here.”
+            </blockquote>
+            <cite class="review-author">— Customer Name</cite>
+            <p class="review-note">PLACEHOLDER — CONFIRM WITH BUSINESS</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars" aria-label="5 stars">★★★★★</div>
+            <blockquote class="review-text">
+              “Add a real customer review here.”
+            </blockquote>
+            <cite class="review-author">— Customer Name</cite>
+            <p class="review-note">PLACEHOLDER — CONFIRM WITH BUSINESS</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <header class="section-header section-header-light">
+          <h2 class="section-title">Ready for your next set?</h2>
+        </header>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="contact-block">
+              <h3 class="contact-label">Phone / WhatsApp</h3>
+              <a href="https://wa.me/27750404794" class="contact-value" target="_blank" rel="noopener noreferrer">075 040 4794</a>
+            </div>
+            <div class="contact-block">
+              <h3 class="contact-label">Address</h3>
+              <p class="contact-value">
+                284 Ben Viljoen St<br>
+                Pretoria North<br>
+                Pretoria, 0182<br>
+                South Africa
+              </p>
+            </div>
+            <div class="contact-block">
+              <h3 class="contact-label">Opening hours</h3>
+              <p class="contact-value">Confirm studio hours<br><span class="placeholder-inline">PLACEHOLDER — CONFIRM WITH BUSINESS</span></p>
+            </div>
+            <div class="contact-actions">
+              <a href="https://wa.me/27750404794" class="btn btn-primary" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+              <a href="#booking" class="btn btn-secondary-light">Book Online</a>
+            </div>
+          </div>
+
+          <div class="contact-map">
+            <div class="map-placeholder" role="img" aria-label="Google Maps placeholder">
+              <span class="map-title">Google Maps</span>
+              <span class="map-hint">Embed the confirmed studio location here.</span>
+              <span class="placeholder-file">Replace with Google Maps iframe</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social placeholders -->
+        <div class="social-row">
+          <p class="social-label">Find us on</p>
+          <div class="social-links">
+            <!-- EDIT THESE URLs WHEN CONFIRMED -->
+            <a href="#" class="social-link" id="socialInstagram" aria-label="Instagram (placeholder)" title="Instagram — add URL">Instagram</a>
+            <a href="#" class="social-link" id="socialTikTok" aria-label="TikTok (placeholder)" title="TikTok — add URL">TikTok</a>
+            <a href="https://wa.me/27750404794" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WhatsApp</a>
+          </div>
+          <p class="social-note">PLACEHOLDER — add real Instagram &amp; TikTok links when confirmed</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#home" class="logo logo-footer">
+          <span class="logo-mark" aria-hidden="true">CN</span>
+          <span class="logo-text">
+            <span class="logo-line1">CLOUD NAILS</span>
+            <span class="logo-line2">STUDIO</span>
+          </span>
+        </a>
+        <p class="footer-tagline">Professional nail care in Pretoria North</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#services">Services</a>
+        <a href="#booking">Book</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer-social">
+        <a href="#" class="social-link" aria-label="Instagram (placeholder)">Instagram</a>
+        <a href="#" class="social-link" aria-label="TikTok (placeholder)">TikTok</a>
+        <a href="https://wa.me/27750404794" class="social-link" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 Cloud Nails Studio</p>
+        <p class="demo-note">Demo website — business details to be confirmed.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Fixed mobile Book button -->
+  <a href="#booking" class="mobile-book-btn" id="mobileBookBtn" aria-label="Book Appointment">
+    Book Appointment
   </a>
-</header>
 
-<div class="status-bar open" id="statusBar">
-  <span class="dot"></span>
-  <span id="statusText">We are OPEN • Mon–Sat 08:00–18:00</span>
-</div>
-
-<section class="hero">
-  <div class="hero-content">
-    <h1>La Ray<br>Hair Salon</h1>
-    <div class="underline"></div>
-    <p>Professional Hair Care<br>on Ruth First Road</p>
-    <a href="https://wa.me/27769517085?text=Hi%20La%20Ray%20Hair%20Salon%2C%20I%20would%20like%20to%20book%20an%20appointment" class="btn btn-green" target="_blank">
-      💬 Book on WhatsApp
-    </a>
-  </div>
-  <div class="hero-img">
-    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&q=80" alt="La Ray Hair Salon">
-  </div>
-</section>
-
-<section class="section" id="services">
-  <div class="section-label">✦ OUR SERVICES</div>
-  <h2 class="section-title">Professional Styles.<br>Beautiful You.</h2>
-  <p class="section-sub">Quality hair care and stylish looks for every woman and child.</p>
-
-  <div class="services-grid">
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=400&q=80" alt="Braids">
-      <div class="service-body">
-        <h3>Braids</h3>
-        <div class="price">from R250</div>
-        <p>Natural, stylish & versatile braids for every look.</p>
-        <a href="https://wa.me/27769517085?text=Hi%2C%20I%20want%20to%20book%20Braids" class="book-btn" target="_blank">Book</a>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80" alt="Weave">
-      <div class="service-body">
-        <h3>Weave Installation</h3>
-        <div class="price">from R400</div>
-        <p>Flawless weaves for length, volume & confidence.</p>
-        <a href="https://wa.me/27769517085?text=Hi%2C%20I%20want%20to%20book%20Weave%20Installation" class="book-btn" target="_blank">Book</a>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400&q=80" alt="Relaxer">
-      <div class="service-body">
-        <h3>Relaxer</h3>
-        <div class="price">from R180</div>
-        <p>Smooth, straight & manageable hair with care.</p>
-        <a href="https://wa.me/27769517085?text=Hi%2C%20I%20want%20to%20book%20Relaxer" class="book-btn" target="_blank">Book</a>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=400&q=80" alt="Kids Styles">
-      <div class="service-body">
-        <h3>Kids Styles</h3>
-        <div class="price">from R150</div>
-        <p>Gentle, fun & age-appropriate styles for kids.</p>
-        <a href="https://wa.me/27769517085?text=Hi%2C%20I%20want%20to%20book%20Kids%20Styles" class="book-btn" target="_blank">Book</a>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&q=80" alt="Box Braids">
-      <div class="service-body">
-        <h3>Box Braids</h3>
-        <div class="price">from R350</div>
-        <p>Full, stylish box braids that last.</p>
-        <a href="https://wa.me/27769517085?text=Hi%2C%20I%20want%20to%20book%20Box%20Braids" class="book-btn" target="_blank">Book</a>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&q=80" alt="Wash & Blow">
-      <div class="service-body">
-        <h3>Wash & Blow</h3>
-        <div class="price">from R120</div>
-        <p>Clean, conditioned and perfectly styled.</p>
-        <a href="https://wa.me/27769517085?text=Hi%2C%20I%20want%20to%20book%20Wash%20%26%20Blow" class="book-btn" target="_blank">Book</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-label">✦ VISIT US</div>
-  <h2 class="section-title">Find Us</h2>
-  <p class="section-sub">We can't wait to style you</p>
-
-  <div class="visit-card">
-    <div class="info-row">
-      <div class="info-icon">📍</div>
-      <div>
-        <strong>Address</strong><br>
-        <span style="color:var(--muted)">57 Block WW, Ruth First Road<br>Soshanguve, 0152</span>
-      </div>
-    </div>
-    <div class="info-row">
-      <div class="info-icon">🕐</div>
-      <div>
-        <strong>Opening Hours</strong><br>
-        <span style="color:var(--muted)">Monday – Saturday: 08:00 – 18:00<br>Sunday: Closed</span>
-      </div>
-    </div>
-    <div class="info-row">
-      <div class="info-icon">📞</div>
-      <div>
-        <strong>Phone / WhatsApp</strong><br>
-        <a href="tel:0769517085" style="color:var(--green);font-weight:600;">076 951 7085</a>
-      </div>
-    </div>
-    <a href="https://www.google.com/maps/search/?api=1&query=57+Block+WW+Ruth+First+Road+Soshanguve" class="map-btn" target="_blank">
-      📍 Get Directions
-    </a>
-  </div>
-</section>
-
-<footer>
-  La Ray Hair Salon · Soshanguve<br>
-  © 2026 All rights reserved
-</footer>
-
-<div class="bottom-bar">
-  <div class="loc">
-    <span>📍</span>
-    <div>
-      <strong>La Ray Hair Salon</strong>
-      Ruth First Road, Soshanguve
-    </div>
-  </div>
-  <a href="https://www.google.com/maps/search/?api=1&query=57+Block+WW+Ruth+First+Road+Soshanguve" class="map-link" target="_blank">
-    📍 View on Map
-  </a>
-</div>
-
-<a href="https://wa.me/27769517085?text=Hi%20La%20Ray%20Hair%20Salon%2C%20I%20would%20like%20to%20book%20an%20appointment" class="float-wa" target="_blank">
-  💬
-</a>
-
-<script>
-  function updateStatus() {
-    const now = new Date();
-    const day = now.getDay();
-    const time = now.getHours() * 60 + now.getMinutes();
-    const open = 8 * 60;
-    const close = 18 * 60;
-    const bar = document.getElementById('statusBar');
-    const text = document.getElementById('statusText');
-    if (day === 0 || time < open || time >= close) {
-      bar.className = 'status-bar closed';
-      text.textContent = 'We are CLOSED • Opens Mon 08:00';
-    } else {
-      bar.className = 'status-bar open';
-      text.textContent = 'We are OPEN • Mon–Sat 08:00–18:00';
-    }
-  }
-  updateStatus();
-  setInterval(updateStatus, 60000);
-</script>
+  <script src="script.js"></script>
 </body>
 </html>

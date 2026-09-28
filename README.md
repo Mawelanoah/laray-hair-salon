@@ -1,30 +1,82 @@
-# La Ray Hair Salon Website
+# Cloud Nails Studio — Demo Website
 
-Professional mobile-friendly website for **La Ray Hair Salon** in Soshanguve.
+Premium, mobile-first booking website for **Cloud Nails Studio**.
 
-## How to upload to GitHub Pages
+## Files
 
-1. Create a new repository on GitHub (e.g. `laray-hair-salon`)
-2. Upload the `index.html` file
-3. Go to **Settings → Pages**
-4. Under "Source" select **Deploy from a branch**
-5. Choose `main` branch and `/ (root)`
-6. Click Save
+```
+/
+├── index.html      ← Main page
+├── style.css       ← All styles
+├── script.js       ← Booking logic + UI
+├── assets/         ← Put real images here
+└── README.md
+```
 
-Your website will be live at:
-`https://yourusername.github.io/laray-hair-salon/`
+## Confirmed business details used
 
-## Business Details
+- **Name:** Cloud Nails Studio  
+- **Type:** Nail salon  
+- **Address:** 284 Ben Viljoen St, Pretoria North, Pretoria, 0182, South Africa  
+- **WhatsApp:** +27 75 040 4794  
+- **Rating:** 5.0 from 25 reviews  
 
-- **Name:** La Ray Hair Salon
-- **Address:** 57 Block WW, Ruth First Road, Soshanguve, 0152
-- **WhatsApp:** 076 951 7085
-- **Hours:** Monday – Saturday 08:00 – 18:00
+Everything else is clearly marked **PLACEHOLDER — CONFIRM WITH BUSINESS**.
 
-## Features
+---
 
-- Mobile-first design
-- Open/Closed status bar
-- WhatsApp booking buttons on every service
-- Directions link
-- Clean light theme
+## How to replace images
+
+Drop real photos into the `assets/` folder with these exact names:
+
+| File | Used for |
+|------|----------|
+| `assets/hero.jpg` | Hero section |
+| `assets/logo.png` | Logo (optional) |
+| `assets/service-1.jpg` | Gel Overlay |
+| `assets/service-2.jpg` | Acrylic Full Set |
+| `assets/service-3.jpg` | Nail Art |
+| `assets/service-4.jpg` | Pedicure |
+| `assets/gallery-1.jpg` … `gallery-6.jpg` | Gallery |
+| `assets/about.jpg` | About section |
+
+Then update the HTML placeholders to use real `<img>` tags (search for the file names).
+
+## How to edit services & prices
+
+In `index.html`, find the service cards and the `<select id="service">` dropdown.  
+Update names, descriptions, prices (`R___`) and durations (`___ min`).
+
+Also update the matching options in the booking form select.
+
+## How to add social links
+
+In `index.html`, search for `id="socialInstagram"` and `id="socialTikTok"` and replace `href="#"`.
+
+## How to embed Google Maps
+
+Replace the map placeholder div with a Google Maps embed iframe (Get embed code from Google Maps → Share → Embed a map).
+
+## How to change WhatsApp number
+
+In `script.js`, edit:
+
+```js
+whatsappNumber: "27750404794",
+```
+
+And update any `https://wa.me/27750404794` links in `index.html`.
+
+## Deploy on GitHub Pages
+
+1. Push this folder to a GitHub repository.
+2. Settings → Pages → Deploy from branch `main` (root).
+3. Site will be live at `https://yourusername.github.io/repo-name/`.
+
+## Customer journey
+
+Instagram / TikTok → Website → Services → Book this service → Date + Time → Details → Continue to WhatsApp → Studio confirms.
+
+---
+
+© 2026 Cloud Nails Studio — Demo website for owner review.
