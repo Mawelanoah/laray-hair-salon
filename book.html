@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Appointment | Perfect Beauty Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a href="index.html" class="logo">
+        <div class="logo__name">Perfect Beauty Studio</div>
+        <div class="logo__place">Moreleta Park</div>
+      </a>
+      <div class="nav__links">
+        <a href="index.html">Home</a>
+        <a href="book.html" class="active">Book</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <a href="book.html" class="btn btn--solid" style="min-height:40px;padding:0.5rem 1.1rem;font-size:0.75rem;">Book</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wizard">
+  <div class="book-container">
+    <div class="progress" id="progress"></div>
+    <div id="wizard-error" class="alert alert--err" hidden></div>
+
+    <!-- STEP 1: Service -->
+    <section class="wizard-step" id="step-1">
+      <h2 class="step-title">Choose your service</h2>
+      <p class="step-sub">Select the service you would like to book.</p>
+      <div class="chips" id="category-chips"></div>
+      <div class="service-grid" id="service-grid">
+        <p class="loading">Loading services…</p>
+      </div>
+    </section>
+
+    <!-- STEP 2: Options -->
+    <section class="wizard-step" id="step-2" hidden>
+      <h2 class="step-title">Service options</h2>
+      <p class="step-sub">For <strong id="options-service-name"></strong> — select any add-ons.</p>
+      <div class="option-list" id="option-list"></div>
+    </section>
+
+    <!-- STEP 3: Professional -->
+    <section class="wizard-step" id="step-3" hidden>
+      <h2 class="step-title">Choose your professional</h2>
+      <p class="step-sub">Select a preferred technician or any available professional.</p>
+      <div class="pro-grid" id="pro-grid"></div>
+    </section>
+
+    <!-- STEP 4: Date -->
+    <section class="wizard-step" id="step-4" hidden>
+      <h2 class="step-title">Choose a date</h2>
+      <p class="step-sub">Available dates are highlighted. Closed and fully booked days are disabled.</p>
+      <div class="calendar" id="calendar"></div>
+    </section>
+
+    <!-- STEP 5: Time -->
+    <section class="wizard-step" id="step-5" hidden>
+      <h2 class="step-title">Choose a time</h2>
+      <p class="step-sub">Select an available appointment time.</p>
+      <div class="slots" id="slots"></div>
+    </section>
+
+    <!-- STEP 6: Details -->
+    <section class="wizard-step" id="step-6" hidden>
+      <h2 class="step-title">Your details</h2>
+      <p class="step-sub">We use this information to confirm your appointment and contact you if needed.</p>
+      <div class="form-group">
+        <label for="detail-name">Full name *</label>
+        <input type="text" id="detail-name" autocomplete="name" required placeholder="Your full name">
+      </div>
+      <div class="form-group">
+        <label for="detail-phone">Phone number *</label>
+        <input type="tel" id="detail-phone" autocomplete="tel" required placeholder="e.g. 072 123 4567">
+        <p class="form-hint">Required so we can confirm or reach you about your appointment.</p>
+      </div>
+      <div class="form-group">
+        <label for="detail-email">Email (optional)</label>
+        <input type="email" id="detail-email" autocomplete="email" placeholder="you@email.com">
+      </div>
+      <div class="form-group">
+        <label for="detail-notes">Special request / note (optional)</label>
+        <textarea id="detail-notes" placeholder="Any preferences or notes for your appointment"></textarea>
+      </div>
+    </section>
+
+    <!-- STEP 7: Summary -->
+    <section class="wizard-step" id="step-7" hidden>
+      <h2 class="step-title">Confirm your appointment</h2>
+      <p class="step-sub">Please review the details below before confirming.</p>
+      <div class="summary" id="summary"></div>
+      <button type="button" class="btn btn--solid btn--full" id="btn-confirm">Confirm Appointment</button>
+    </section>
+
+    <!-- STEP 8: Done -->
+    <section class="wizard-step" id="step-8" hidden>
+      <div class="confirm-box">
+        <div class="confirm-box__icon">✓</div>
+        <h2 class="step-title">Appointment confirmed</h2>
+        <p class="step-sub">Thank you. Your booking has been received.</p>
+        <div class="confirm-ref" id="confirm-ref"></div>
+        <div id="confirm-details"></div>
+        <div class="btn-row" style="justify-content:center;margin-top:1.5rem;">
+          <a href="index.html" class="btn btn--ghost">Back to Home</a>
+          <a href="book.html" class="btn btn--solid">Book another</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="wizard-nav" id="wizard-nav">
+      <button type="button" class="btn btn--ghost" id="btn-back">Back</button>
+      <button type="button" class="btn btn--solid" id="btn-next">Continue</button>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__brand">Perfect Beauty Studio</div>
+    <p>641 Rubenstein Drive, Moreleta Park, Pretoria</p>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Perfect Beauty Studio</span>
+      <span>Custom booking system</span>
+    </div>
+  </div>
+</footer>
+<script src="js/booking.js"></script>
+</body>
+</html>

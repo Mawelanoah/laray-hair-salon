@@ -1,82 +1,93 @@
-# Cloud Nails Studio — Demo Website
+# Perfect Beauty Studio — Custom Booking System
 
-Premium, mobile-first booking website for **Cloud Nails Studio**.
+A complete salon website with a **real on-site booking system** (no Fresha redirect) and a private admin dashboard.
 
-## Files
+## What is included
 
-```
-/
-├── index.html      ← Main page
-├── style.css       ← All styles
-├── script.js       ← Booking logic + UI
-├── assets/         ← Put real images here
-└── README.md
-```
+### Customer website
+- Home page (hero, services preview, how booking works, contact, hours)
+- **Book Appointment** multi-step wizard:
+  1. Choose service (by category)
+  2. Service options / add-ons (price updates)
+  3. Choose professional (or Any Available)
+  4. Choose date (calendar; closed/past days disabled)
+  5. Choose time (real availability; no double bookings)
+  6. Customer details (name, phone required)
+  7. Summary → Confirm
+  8. Confirmation + booking reference (e.g. PBS-2026-0001)
 
-## Confirmed business details used
+### Admin dashboard (`/admin/`)
+- Login (JWT, bcrypt password)
+- Dashboard stats (today, upcoming, total, cancelled)
+- Appointments list — cancel / mark completed
+- View services & professionals
+- Server-side double-booking protection
 
-- **Name:** Cloud Nails Studio  
-- **Type:** Nail salon  
-- **Address:** 284 Ben Viljoen St, Pretoria North, Pretoria, 0182, South Africa  
-- **WhatsApp:** +27 75 040 4794  
-- **Rating:** 5.0 from 25 reviews  
+### Data
+Verified salon data only:
+- Address: 641 Rubenstein Drive, Moreleta Park, Pretoria
+- Hours: Mon–Sat 09:00–18:00, Sun 09:00–16:00
+- Services & prices from public Fresha listing
+- Team: Nicole, Mercy, Thato, Shalom, Elelwani, Mpho, Portia, Karen, Caroline
 
-Everything else is clearly marked **PLACEHOLDER — CONFIRM WITH BUSINESS**.
+## Tech stack
 
----
+| Layer | Technology |
+|-------|------------|
+| Frontend | HTML, CSS, vanilla JS |
+| Backend | Node.js + Express |
+| Database | JSON file store (schema ready for SQLite/PostgreSQL) |
+| Auth | bcrypt + JWT |
 
-## How to replace images
+The data layer (`backend/db.js`) mirrors a relational schema. You can later replace it with SQLite or PostgreSQL without rewriting route handlers.
 
-Drop real photos into the `assets/` folder with these exact names:
+## Setup (local)
 
-| File | Used for |
-|------|----------|
-| `assets/hero.jpg` | Hero section |
-| `assets/logo.png` | Logo (optional) |
-| `assets/service-1.jpg` | Gel Overlay |
-| `assets/service-2.jpg` | Acrylic Full Set |
-| `assets/service-3.jpg` | Nail Art |
-| `assets/service-4.jpg` | Pedicure |
-| `assets/gallery-1.jpg` … `gallery-6.jpg` | Gallery |
-| `assets/about.jpg` | About section |
-
-Then update the HTML placeholders to use real `<img>` tags (search for the file names).
-
-## How to edit services & prices
-
-In `index.html`, find the service cards and the `<select id="service">` dropdown.  
-Update names, descriptions, prices (`R___`) and durations (`___ min`).
-
-Also update the matching options in the booking form select.
-
-## How to add social links
-
-In `index.html`, search for `id="socialInstagram"` and `id="socialTikTok"` and replace `href="#"`.
-
-## How to embed Google Maps
-
-Replace the map placeholder div with a Google Maps embed iframe (Get embed code from Google Maps → Share → Embed a map).
-
-## How to change WhatsApp number
-
-In `script.js`, edit:
-
-```js
-whatsappNumber: "27750404794",
+```bash
+cd backend
+npm install
+npm run seed          # creates admin + services + team
+npm start             # http://localhost:3001
 ```
 
-And update any `https://wa.me/27750404794` links in `index.html`.
+- Website: http://localhost:3001/
+- Book:    http://localhost:3001/book.html
+- Admin:   http://localhost:3001/admin/
 
-## Deploy on GitHub Pages
+**Default admin**
+- Email: `admin@perfectbeautystudio.co.za`
+- Password: `admin123`  
+**Change this password after first login.**
 
-1. Push this folder to a GitHub repository.
-2. Settings → Pages → Deploy from branch `main` (root).
-3. Site will be live at `https://yourusername.github.io/repo-name/`.
+## Environment variables (optional)
 
-## Customer journey
+Create `backend/.env`:
 
-Instagram / TikTok → Website → Services → Book this service → Date + Time → Details → Continue to WhatsApp → Studio confirms.
+```
+PORT=3001
+JWT_SECRET=your-long-random-secret
+FRONTEND_URL=*
+```
 
----
+## Deploy (small business / free tier)
 
-© 2026 Cloud Nails Studio — Demo website for owner review.
+1. **Backend + static files together**  
+   Deploy the whole `pbs-booking` folder to:
+   - Railway
+   - Render
+   - Fly.io  
+   Start command: `cd backend && npm install && npm run seed && npm start`
+
+2. **Or** host frontend on any static host and API separately; set `FRONTEND_URL` and point the frontend API base URL to your API.
+
+## Database file
+
+Data is stored in `backend/data/db.json`.  
+Back up this file regularly. For production scale, migrate to PostgreSQL (Supabase free tier works well).
+
+## Important notes
+
+- Bookings are stored on the server — not on WhatsApp.
+- Double-booking is blocked on the server before an appointment is saved.
+- Add-on option prices for “Removal” / “Wrap” start at R0 — set real prices in admin/API once the salon confirms them.
+- Photo placeholders are ready for real salon images.
